@@ -58,6 +58,8 @@ public class Main {
                 //tilføj til ordrehistorik her
             }
         }
+
+        System.out.println("HEJ");
     }
 }
 
