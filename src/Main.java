@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
 
 public class Main {
@@ -58,6 +60,7 @@ public class Main {
                 //tilføj til ordrehistorik her
             }
         }
+        System.out.println("FARVEL");
     }
 }
 
