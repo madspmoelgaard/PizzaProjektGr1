@@ -9,6 +9,7 @@ public class Menu {
         PizzaMenu.add(pizza);
     }
 
+
     public void showMenu() {
         System.out.println("Pizza Menu:");
         for (Pizza p : PizzaMenu) {
@@ -22,6 +23,10 @@ public class Menu {
                 return p;
             }
         }
+        return null;
+    }
+
+    private Pizza toString(int i) {
         return null;
     }
 
