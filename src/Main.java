@@ -44,23 +44,30 @@ public class Main {
         System.out.println("\nHvilken pizza kunne du tænke dig at bestille?");
 
         boolean newOrder = true;
-        while(newOrder){
+        BestillingsKlasse orderList = new BestillingsKlasse();
+        while (newOrder) {
 
             int order = userInput.nextInt();
+            Pizza foundPizza = menu.searchPizzaByNumber(order);
             menu.searchPizzaByNumber(order);
-            System.out.println("Du har valgt nr. " + order);
 
-            System.out.println("Ellers andet?");
-            System.out.println("'n' = Nej Tak");
+            if (foundPizza != null) {
+                orderList.addOrder(foundPizza);
+                System.out.println("Du har valgt en: " + foundPizza.getName());
+            } else {
+                System.out.println("Desværre, den findes ikke ... ");
+            }
 
-            String answer = userInput.nextLine();
+            System.out.println("Ellers andet? '0' = Nej Tak - Ellers vælg ny pizza ");
 
-            if(answer.equalsIgnoreCase("n")){
+            if (order == 0) {
+                System.out.println();
                 newOrder = false;
-                //tilføj til ordrehistorik her
             }
         }
-        System.out.println("FARVEL");
+        System.out.println("Din bestilling:");
+        orderList.showOrder();
+
     }
 }
 
