@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class BestillingsKlasse {
@@ -24,5 +23,4 @@ public class BestillingsKlasse {
         System.out.println("Samlet pris: " + totalPrice + ",-" );
         System.out.println("Tak for din bestilling!");
     }
-
 }
