@@ -1,5 +1,6 @@
 import org.w3c.dom.ls.LSOutput;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -63,10 +64,30 @@ public class Main {
             if (order == 0) {
                 System.out.println();
                 newOrder = false;
+
             }
         }
         System.out.println("Din bestilling:");
         orderList.showOrder();
+
+
+        // SLET EN ORDRE :
+        OrderSystem orderSystem = new OrderSystem();
+
+        List<String> pizzas1 = List.of("BBQ Kylling", "Milano");
+        List<String> pizzas2 = List.of("Hawaii", "Vesuvio");
+
+        orderSystem.Order(1, "Lars", pizzas1);
+        orderSystem.Order(2, "Anna", pizzas2);
+
+        orderSystem.listOrders();
+
+        orderSystem.getOrderId();
+
+        orderSystem.deleteOrder(1);
+
+        orderSystem.listOrders();
+
 
     }
 }
