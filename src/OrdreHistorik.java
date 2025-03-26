@@ -5,6 +5,7 @@ public class OrdreHistorik {
 
 
     public void addOrder (Pizza pizza) {
+
         ordreHistory.add(pizza);
     }
 

@@ -40,6 +40,7 @@ public class Main {
         menu.addPizza(new Pizza(29, "Vegetariana", " tomatsauce, ost, peberfrugt, aubergine, squash, løg og oregano ", 61));
         menu.addPizza(new Pizza(30, "BBQ Kylling", " BBQ sauce, ost, kylling, bacon og rød peber ", 67));
 
+        OrdreHistorik ordreHistorik = new OrdreHistorik();
 
         menu.showMenu();
         System.out.println("\nHvilken pizza kunne du tænke dig at bestille?");
@@ -54,6 +55,7 @@ public class Main {
 
             if (foundPizza != null) {
                 orderList.addOrder(foundPizza);
+                ordreHistorik.addOrder(foundPizza);
                 System.out.println("Du har valgt en: " + foundPizza.getName());
             } else {
                 System.out.println("Desværre, den findes ikke ... ");
@@ -65,11 +67,20 @@ public class Main {
                 System.out.println();
                 newOrder = false;
 
+
             }
         }
         System.out.println("Din bestilling:");
         orderList.showOrder();
 
+        //Viser OrdreHistorik.
+        ordreHistorik.showOrderHistory();
+        ordreHistorik.showTotalSales();
+
+        //Ændrer pris på pizza.
+        Pizza pizza = menu.searchPizzaByNumber(1);
+        pizza.setPrice(70);
+        System.out.println("Ny pris for " + pizza.getName() + " er " + pizza.getPrice() + " kr.");
 
         // SLET EN ORDRE :
         OrderSystem orderSystem = new OrderSystem();
@@ -87,6 +98,9 @@ public class Main {
         orderSystem.deleteOrder(1);
 
         orderSystem.listOrders();
+
+
+        System.out.println();
 
 
     }
