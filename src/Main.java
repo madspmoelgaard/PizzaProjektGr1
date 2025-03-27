@@ -1,5 +1,3 @@
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -72,21 +70,23 @@ public class Main {
 
 
         // SLET EN ORDRE :
-        OrderSystem orderSystem = new OrderSystem();
+
+
+        List<String> pizzas2 = null;
+        OrderSystem orderSystem = new OrderSystem(2, "Anna", pizzas2);
 
         List<String> pizzas1 = List.of("BBQ Kylling", "Milano");
-        List<String> pizzas2 = List.of("Hawaii", "Vesuvio");
+        pizzas2 = List.of("Hawaii", "Vesuvio");
 
-        orderSystem.Order(1, "Lars", pizzas1);
-        orderSystem.Order(2, "Anna", pizzas2);
+        orderSystem.addToOrderSystem(new OrderSystem(1, "Lars", pizzas1));
+        orderSystem.addToOrderSystem(new OrderSystem(2, "Anna", pizzas2));
 
         orderSystem.listOrders();
-
-        orderSystem.getOrderId();
-
+        System.out.println();
         orderSystem.deleteOrder(1);
-
+        System.out.println();
         orderSystem.listOrders();
+
 
 
     }
