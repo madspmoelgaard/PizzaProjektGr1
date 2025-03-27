@@ -87,7 +87,11 @@ public class Main {
         System.out.println();
         orderSystem.listOrders();
 
+        PizzaOrdre.PizzaKo pizzaKo = new PizzaOrdre.PizzaKo();  // Opretter køen
+        PizzaOrdre.OrdreManager ordreManager = new PizzaOrdre.OrdreManager(pizzaKo);  // Opretter ordre systemet
+        PizzaOrdre.OrdreInput ordreInput = new PizzaOrdre.OrdreInput(ordreManager);  // Opretter OrdreInput for at håndtere brugerinput
 
+        ordreInput.tagInput();
 
     }
 }
