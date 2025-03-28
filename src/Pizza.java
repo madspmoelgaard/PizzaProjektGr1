@@ -14,6 +14,9 @@ public class Pizza {
 
     }
 
+    public void setPrice(int price) {
+        this.price = price;}
+
     public String getName() {
         return name;
     }
@@ -34,4 +37,7 @@ public class Pizza {
     public String toString() {
         return number + ": " + name + ingredients + ", " + price + ",-";
     }
+
+
+
 }
