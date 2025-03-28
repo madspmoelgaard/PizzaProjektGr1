@@ -44,8 +44,11 @@ public class Main {
             System.out.println("Ny pris for " + pizza.getName() + " er " + pizza.getPrice() + " kr.");
         }
 
+
+        System.out.println("READY TO GO");
+
         List<String> pizzas1 = List.of("BBQ Kylling", "Milano");
-        List<String> pizzas2 = List.of("Hawaii", "Vesuvio");
+        List<String> pizzas2 = List.of("Hawaii", "Vesuvio"); 
 
         OrderSystem orderSystem = new OrderSystem(2, "Anna", pizzas2);
         orderSystem.addToOrderSystem(new OrderSystem(1, "Lars", pizzas1));
@@ -61,8 +64,6 @@ public class Main {
         PizzaOrdre.OrdreManager ordreManager = new PizzaOrdre.OrdreManager(pizzaKo);
         PizzaOrdre.OrdreInput ordreInput = new PizzaOrdre.OrdreInput(ordreManager);
         ordreInput.tagInput();
-
-        System.out.println();
     }
 
     private static void initializeMenu(Menu menu) {
