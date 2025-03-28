@@ -59,7 +59,7 @@ public class Main {
             }
         }
 
-        System.out.println("HEJ");
+        System.out.println("READY TO GO");
     }
 }
 
